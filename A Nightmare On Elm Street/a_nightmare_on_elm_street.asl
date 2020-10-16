@@ -65,10 +65,7 @@ split
 
 start
 {
-    if (old.x_pos == 0 && current.x_pos != 0)
-    {
-        return (current.door_rng == 0);
-    }
+    if (old.x_pos == 0 && current.x_pos != 0) return true;
 }
 
 /*
