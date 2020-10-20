@@ -39,7 +39,7 @@ init
 
 split
 {
-    if (current.screen_type == 8 && old.screen_type != 8) return true;
+    if (current.screen_type == 9 && old.screen_type != 9) return true;
 }
 
 start
