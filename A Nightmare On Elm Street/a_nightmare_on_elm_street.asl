@@ -67,10 +67,3 @@ start
 {
     if (old.x_pos == 0 && current.x_pos != 0) return true;
 }
-
-/*
-update
-{
-    print(current.screen_section.ToString());
-}
-*/

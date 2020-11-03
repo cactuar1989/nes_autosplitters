@@ -46,9 +46,3 @@ start
 {
     if (current.screen_type == 4 && old.screen_type == 3 && current.game_mode == 0) return true;
 }
-
-/*
-update
-{
-}
-*/
