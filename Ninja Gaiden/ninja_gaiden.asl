@@ -1,4 +1,11 @@
-// Based on https://github.com/saturnin55/DucktalesNESAutoSplitter by saturnin55
+// HUGE shoutout to TwitchyPJ for being a million times smarter than me and figuring out the MesenRTA base address.
+// https://github.com/TwitchyPJ/Ninja-Gaiden-Autosplitter
+state("mesen", "0.0.1.0")
+{
+    byte ryu_x:         "MesenCore.dll", 0x042FA9C0, 0xB8, 0x88, 0xFD8, 8, 0x86;
+    byte timer:         "MesenCore.dll", 0x042FA9C0, 0xB8, 0x88, 0xC0, 8, 0x63;
+    byte boss_hp:       "MesenCore.dll", 0x042FA9C0, 0xB8, 0x88, 0x1D8, 8, 0x66;
+}
 
 state("mesen", "0.9.8.0")
 {
@@ -12,6 +19,7 @@ state("mesen", "0.9.8.0")
 
 state("mesen", "0.9.9.0")
 {
+//19B24560000
     byte act:           "MesenCore.dll", 0x042E0F30, 0, 0x58, 0xC90, 0x58, 0x6d;
     byte stage:         "MesenCore.dll", 0x042E0F30, 0, 0x58, 0xC90, 0x58, 0x6e;
     byte ryu_x:         "MesenCore.dll", 0x042E0F30, 0, 0x58, 0xC90, 0x58, 0x86;
@@ -19,6 +27,7 @@ state("mesen", "0.9.9.0")
     byte timer:         "MesenCore.dll", 0x042E0F30, 0, 0x58, 0xC90, 0x58, 0x63;
     byte boss_hp:       "MesenCore.dll", 0x042E0F30, 0, 0x58, 0xC90, 0x58, 0x66;
 }
+
 
 state("fceux", "2.2.3") 
 {
@@ -44,6 +53,11 @@ state("nestopia", "1.40")
 init
 {
     version = modules.First().FileVersionInfo.FileVersion;
+}
+
+update
+{
+    print(current.timer.ToString());
 }
 
 split
